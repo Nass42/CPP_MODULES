@@ -1,29 +1,22 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/11 03:49:01 by namohamm          #+#    #+#             */
-/*   Updated: 2022/07/12 15:44:45 by namohamm         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #include <iostream>
+#include <string>
+#include "Personnage.hpp"
 
 using namespace std;
 
-class Personage
-{
-	int m_vie;
-	int m_mana;
-	string m_nomArme;
-	int m_degatsArme;
-};
 
 int main(void)
 {
-	cout << "Hello Nass" << endl;
+	Personnage david, goliath("Epee aiguisee", 20);
+	//Création de 2 objets de type Personnage : david et goliath
+ 
+	goliath.attaquer(david);    //goliath attaque david
+	david.boirePotionDeVie(20); //david récupère 20 de vie en buvant une potion
+	goliath.attaquer(david);    //goliath attaque david
+	david.attaquer(goliath);    //david contre-attaque... c'est assez clair non ?
+    
+	goliath.changerArme("Double hache de la mort", 40);
+	goliath.attaquer(david);
 	return (0);
 }
