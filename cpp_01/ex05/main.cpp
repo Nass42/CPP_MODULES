@@ -5,25 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/29 23:49:27 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/01 11:45:17 by namohamm         ###   ########.fr       */
+/*   Created: 2022/12/01 09:44:45 by namohamm          #+#    #+#             */
+/*   Updated: 2022/12/01 10:33:54 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
-#include <iostream>
-#include <ostream>
-        
-int main( void ) {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
+#include "Harl.hpp"
+
+int main( void ){
+	Harl harl;
+
+	std::cout << std::endl;
+	harl.complain("DEBUG");
+	std::cout << std::endl;
+	harl.complain("INFO");
+	std::cout << std::endl;
+	harl.complain("WARNING");
+	std::cout << std::endl;
+	harl.complain("ERROR");
 	return 0;
 }
