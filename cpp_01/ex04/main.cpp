@@ -6,7 +6,7 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 11:12:54 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/01 11:09:31 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/01 09:13:47 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int main( int ac, char **av ) {
 	std::string filename = av[1];
 	std::string s1 = av[2];
 	std::string s2 = av[3];
-	std::ifstream ifs(filename);
+	std::ifstream ifs(filename.c_str());
 	if (!ifs) {
 		std::cout << "Error: File does not exist" << std::endl;
 		return (1);
@@ -80,7 +80,7 @@ int main( int ac, char **av ) {
 		ifs.close();
 		return (1);
 	}
-	std::ofstream ofs(filename + ".replace");
+	std::ofstream ofs((filename + ".replace").c_str());
 	ofs << content;
 	ifs.close();
 	ofs.close();
