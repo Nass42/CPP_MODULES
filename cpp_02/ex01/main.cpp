@@ -41,7 +41,15 @@ int main ( void ) {
 // Float constructor called
 // Copy constructor called
 // Copy assignation operator called
-// Destructor called // beacuse of a = Fixed( 1234.4321f ); // how ? well, a is a local variable, so when it goes out of scope, it's destructor is called // and the destructor is called when the object goes out of scope // so when a = Fixed( 1234.4321f ); is called, the destructor is called for the object a // and then the object a is assigned a new value //
+// Destructor called
+	// beacuse of a = Fixed( 1234.4321f );
+	// how ? well, a is a local variable, so when it goes out of scope, it's destructor is called
+	// and the destructor is called when the object goes out of scope
+	// so when a = Fixed( 1234.4321f ); is called, the destructor is called for the object a
+	// and then the object a is assigned a new value
+	// so the destructor is called for the object a, and then the object a is assigned a new value
+	// that's why the destructor is called twice
+	// and the copy assignation operator is called once
 // a is 1234.43
 // b is 10
 // c is 42.42
