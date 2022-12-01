@@ -6,7 +6,7 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 23:53:31 by namohamm          #+#    #+#             */
-/*   Updated: 2022/11/29 23:59:29 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/11/30 23:41:20 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,49 +15,25 @@
 
 # include <iostream>
 
-/*
-** Fixed class
-	Add public member functions to your class to overload the following operators:
-• The 6 comparison operators: >, <, >=, <=, == and !=.
-• The 4 arithmetic operators: +, -, *, and /.
-• The 4 increment/decrement (pre-increment and post-increment, pre-decrement and post-decrement) operators, that will increase or decrease the fixed-point value from the smallest representable ε such as 1 + ε > 1.
-*/
-
 class Fixed
 {
 	private:
-		int 				_fixedPointValue;
+		int					_fixedPointValue;
 		static const int	_fractionalBits = 8;
 	public:
-		Fixed();
-		Fixed(const Fixed &copy);
-		Fixed(const int n);
-		Fixed(const float n);
-		~Fixed();
-		Fixed &operator=(const Fixed &copy);
-		int getRawBits(void) const;
-		void setRawBits(int const raw);
-		float toFloat(void) const;
-		int toInt(void) const;
-		bool operator>(const Fixed &copy) const;
-		bool operator<(const Fixed &copy) const;
-		bool operator>=(const Fixed &copy) const;
-		bool operator<=(const Fixed &copy) const;
-		bool operator==(const Fixed &copy) const;
-		bool operator!=(const Fixed &copy) const;
-		Fixed operator+(const Fixed &copy) const;
-		Fixed operator-(const Fixed &copy) const;
-		Fixed operator*(const Fixed &copy) const;
-		Fixed operator/(const Fixed &copy) const;
-		Fixed &operator++();
-		Fixed operator++(int);
-		Fixed &operator--();
-		Fixed operator--(int);
-		static Fixed &min(Fixed &a, Fixed &b);
-		static Fixed &max(Fixed &a, Fixed &b);
-		static const Fixed &min(const Fixed &a, const Fixed &b);
-		static const Fixed &max(const Fixed &a, const Fixed &b);
+		Fixed(); // Default constructor
+		Fixed(const Fixed &copy); // Copy constructor
+		~Fixed(); // Destructor
+		Fixed& operator=(const Fixed &rhs); // Copy assignation operator
+		int getRawBits(void) const; // Returns the raw value of the fixed point value
+		void setRawBits(int const raw); // Sets the raw value of the fixed point value
+		Fixed(const int value); // Int constructor
+		Fixed(const float value); // Float constructor
+		float toFloat(void) const; // Converts the fixed point value to a float
+		int toInt(void) const; // Converts the fixed point value to an int
 };
+
+std::ostream& operator<<(std::ostream &out, const Fixed &rhs);  // Overload the << operator
 
 #endif
  

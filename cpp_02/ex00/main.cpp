@@ -6,7 +6,7 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 19:48:56 by namohamm          #+#    #+#             */
-/*   Updated: 2022/11/30 13:53:50 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/11/29 19:49:35 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 int main( void ) {
 	Fixed a;
-	// Fixed b(a);
-	Fixed b = a;
-	int j = 0;
+	Fixed b(a);
 	Fixed c;
 
 	c = b;
