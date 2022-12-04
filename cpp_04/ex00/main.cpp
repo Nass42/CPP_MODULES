@@ -5,20 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/01 21:28:49 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/04 17:34:08 by namohamm         ###   ########.fr       */
+/*   Created: 2022/12/04 18:29:16 by namohamm          #+#    #+#             */
+/*   Updated: 2022/12/04 18:33:36 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
 
-int main(void) {
-	ClapTrap clapTrap("ClapTrap");
-	std::cout << "------------------"<< std::endl;
-	clapTrap.attack("Enemy");
-	clapTrap.takeDamage(9);
-	clapTrap.beRepaired(8);
-	std::cout << "------------------"<< std::endl;
-
+int main( void )
+{
+	const Animal* meta = new Animal();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
+	i->makeSound(); //will output the cat sound!
+	j->makeSound();
+	meta->makeSound();
 	return 0;
 }

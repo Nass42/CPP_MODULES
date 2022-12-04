@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/12/01 14:40:52 by namohamm          #+#    #+#              #
-#    Updated: 2022/12/04 13:41:05 by namohamm         ###   ########.fr        #
+#    Created: 2022/12/04 17:45:18 by namohamm          #+#    #+#              #
+#    Updated: 2022/12/04 18:33:58 by namohamm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-Name = scravtrap
+Name = animal
 
-SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp
+SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

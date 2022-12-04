@@ -6,7 +6,7 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 00:28:27 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/04 17:26:56 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/04 17:09:06 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,13 @@
 ** access specifies the access level for the base class members in the derived class
 */
 
-// ScavTrap inherits from ClapTrap
 class ScavTrap : public ClapTrap {
 	public:
 		ScavTrap();
 		ScavTrap( std::string name );
 		ScavTrap( ScavTrap const& rhs );
-		ScavTrap& operator=( ScavTrap const& rhs );
 		~ScavTrap();
+		ScavTrap& operator=( ScavTrap const& rhs );
 		void guardGate();
 };
 

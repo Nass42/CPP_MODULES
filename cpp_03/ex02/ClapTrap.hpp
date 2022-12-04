@@ -6,7 +6,7 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 14:59:47 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/04 17:23:51 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/01 21:44:50 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ class ClapTrap {
 	public:
 		ClapTrap();
 		ClapTrap( std::string name );
-		ClapTrap( ClapTrap const& rhs );
-		ClapTrap& operator=( ClapTrap const& rhs );
+		ClapTrap( ClapTrap const & rhs );
+		ClapTrap & operator=( ClapTrap const & rhs );
 		~ClapTrap();
-		void attack( std::string const& target );
+		void attack( std::string const & target );
 		void takeDamage( unsigned int amount );
 		void beRepaired( unsigned int amount );
 };
