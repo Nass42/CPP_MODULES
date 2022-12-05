@@ -6,21 +6,21 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 18:11:53 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/04 18:33:32 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/05 22:29:53 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal(): _type("Animal") {
+Animal::Animal(): _type() {
 	std::cout << "Animal Default Constructor Called" << std::endl;
 	this->_type = "Animal";
 }
 
-Animal::Animal( std::string type ): _type(type) {
-	std::cout << "Animal Parametric Constructor Called" << std::endl;
-	this->_type = type;
-}
+// Animal::Animal( std::string type ): _type(type) {
+// 	std::cout << "Animal Parametric Constructor Called" << std::endl;
+// 	this->_type = type;
+// }
 
 Animal::Animal( Animal const& src ) {
 	std::cout << "Animal Copy Constructor Called" << std::endl;
@@ -40,4 +40,8 @@ Animal& Animal::operator=(Animal const& rhs) {
 
 std::string Animal::getType() const {
 	return this->_type;
+}
+
+void Animal::makeSound() const {
+	std::cout << "Animal Sound!" << std::endl;
 }

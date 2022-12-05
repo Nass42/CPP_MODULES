@@ -6,20 +6,15 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 18:21:08 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/04 18:34:26 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/05 22:34:37 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat(): _type("Cat") {
+Cat::Cat(): Animal() {
 	std::cout << "Cat Default Constructor Called" << std::endl;
 	this->_type = "Cat";
-}
-
-Cat::Cat( std::string type ): _type(type) {
-	std::cout << "Cat Parametric Constructor Called" << std::endl;
-	this->_type = type;
 }
 
 Cat::Cat( Cat const& src ) {

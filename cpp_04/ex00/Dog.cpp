@@ -6,13 +6,13 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 18:19:34 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/04 18:20:36 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/05 22:27:16 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog(): Animal("Dog") {
+Dog::Dog(): Animal() {
 	std::cout << "Dog Default Constructor Called" << std::endl;
 	this->_type = "Dog";
 }

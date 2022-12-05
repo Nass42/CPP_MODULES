@@ -6,13 +6,13 @@
 #    By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/04 17:45:18 by namohamm          #+#    #+#              #
-#    Updated: 2022/12/04 18:33:58 by namohamm         ###   ########.fr        #
+#    Updated: 2022/12/05 22:50:14 by namohamm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 Name = animal
 
-SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp
+SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

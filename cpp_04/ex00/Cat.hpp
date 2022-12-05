@@ -6,7 +6,7 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 18:21:44 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/04 18:28:09 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/05 22:34:04 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,8 @@
 # include "Animal.hpp"
 
 class Cat : public Animal {
-	private:
-		std::string _type;
 	public:
 		Cat();
-		Cat( std::string type );
 		Cat( Cat const& src );
 		~Cat();
 		Cat& operator=(Cat const& rhs);
