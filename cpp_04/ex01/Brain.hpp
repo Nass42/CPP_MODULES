@@ -6,7 +6,7 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 23:36:01 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/06 16:13:55 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/06 18:00:51 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class Brain
 		Brain& operator=(Brain const &rhs);
 		std::string	identify() const;
 		void getIdeas() const;
+		void setIdeas();
 };
 
 #endif

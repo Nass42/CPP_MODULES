@@ -6,16 +6,22 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 16:09:48 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/06 16:14:46 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/06 18:02:10 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
 
+// set a random idea for each index of the array
+std::string RandomIdea() {
+	std::string idea[5] = {"Play", "Eat", "Jump", "Sleep", "Think"};
+	return idea[rand() % 5];
+}
+
 Brain::Brain() {
 	std::cout << "Brain Default Constructor Called" << std::endl;
 	for (int i = 0; i < 100; i++)
-		this->_ideas[i] = "Idea " + std::to_string(i);
+		this->_ideas[i] = RandomIdea();
 }
 
 Brain::Brain( Brain const& src ) {
@@ -37,6 +43,11 @@ Brain& Brain::operator=(Brain const& rhs) {
 }
 
 void Brain::getIdeas() const {
-	for (int i = 0; i < 100; i++)
+	for (int i = 0; i < 5; i++)
 		std::cout << this->_ideas[i] << std::endl;
+}
+
+void Brain::setIdeas() {
+	for (int i = 0; i < 100; i++)
+		this->_ideas[i] = RandomIdea();
 }
