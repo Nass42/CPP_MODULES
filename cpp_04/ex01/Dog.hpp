@@ -6,7 +6,7 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 18:14:57 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/05 23:53:10 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/06 16:28:40 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class Dog : public Animal {
 		~Dog();
 		Dog& operator=(Dog const& rhs);
 		void makeSound() const;
+		Brain getbrain() const;
 };
 
 #endif
