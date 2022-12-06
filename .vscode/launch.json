@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/workspaces/cpp",
-      "program": "/workspaces/cpp/build/Debug/outDebug",
+      "cwd": "/Users/namohamm/Desktop/cpp",
+      "program": "/Users/namohamm/Desktop/cpp/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
