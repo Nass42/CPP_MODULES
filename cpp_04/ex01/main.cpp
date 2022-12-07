@@ -6,7 +6,7 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 18:29:16 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/06 18:21:16 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/06 23:02:38 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,27 @@ void mandatory_test()
 	std::cout << "----------------------------------------" << std::endl;
 }
 
+void additional_test() {
+	Animal *cat_one = new Cat();
+	// Animal *cat_two;
+
+	// print ideas of each animal
+
+	std::cout << "----------------------------------------" << std::endl;
+	((Cat*)cat_one)->getbrain().getIdeas();
+	// cat_two = cat_one;
+	// ((Cat*)cat_two)->getbrain().getIdeas();
+	std::string lol = "lol";
+	std::cout << "----------------------------------------" << std::endl;
+	((Cat*)cat_one)->getbrain().setIdeas(lol, 1);
+	((Cat*)cat_one)->getbrain().getIdeas();
+	std::cout << "----------------------------------------" << std::endl;
+}
+
 int main( void )
 {
-	mandatory_test();
+	// mandatory_test();
+	additional_test();
 	
 	return 0;
 }

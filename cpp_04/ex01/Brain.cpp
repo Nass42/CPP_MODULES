@@ -6,7 +6,7 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 16:09:48 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/06 18:02:10 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/06 23:03:11 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 // set a random idea for each index of the array
 std::string RandomIdea() {
-	std::string idea[5] = {"Play", "Eat", "Jump", "Sleep", "Think"};
+	std::string idea[5] = {"Play ", "Eat", "Jump", "Sleep", "Think"};
 	return idea[rand() % 5];
 }
 
@@ -47,7 +47,12 @@ void Brain::getIdeas() const {
 		std::cout << this->_ideas[i] << std::endl;
 }
 
-void Brain::setIdeas() {
-	for (int i = 0; i < 100; i++)
-		this->_ideas[i] = RandomIdea();
+// void Brain::setIdeas() {
+// 	// for (int i = 0; i < 100; i++)
+// 	// 	this->_ideas[i] = RandomIdea();
+// 	this->_ideas[0] = "Nasser";
+// }
+
+void Brain::setIdeas(std::string &idea, int index) {
+	this->_ideas[index] = idea;
 }
