@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/05 23:36:01 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/07 13:14:22 by namohamm         ###   ########.fr       */
+/*   Created: 2022/12/04 18:14:57 by namohamm          #+#    #+#             */
+/*   Updated: 2022/12/06 16:28:40 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
-# include <iostream>
+# include "Animal.hpp"
+# include "Brain.hpp"
 
-class Brain
-{
+class Dog : public Animal {
 	private:
-		std::string	_ideas[100];
+		Brain*	_brain;
 	public:
-		Brain();
-		Brain(Brain const &src);
-		~Brain();
-		Brain& operator=(Brain const &rhs);
-		std::string	identify() const;
-		void getIdeas() const;
-		void setIdeas(std::string &idea, int index);
-		void changeIdeas();
+		Dog();
+		Dog( Dog const& src );
+		~Dog();
+		Dog& operator=(Dog const& rhs);
+		void makeSound() const;
+		Brain getbrain() const;
 };
 
 #endif

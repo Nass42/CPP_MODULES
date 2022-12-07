@@ -6,7 +6,7 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 23:59:33 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/03 12:17:28 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/07 11:12:36 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,11 @@
 ** here an example of a fixed point number with 8 bits for the fractional part
 ** lets take the number 1234.4321 and fractionalBits = 8
 ** 1234.4321 * 2^8 = 316014.618
-** roundf(316014.618) = 316015
+** roundf(316014.618) = 316015 <- this is the fixed point number
 ** Now lets convert the fixed point number back to a floating point number
-** fixedPointNumber / 2^8 = 318 / 256 = 1.234375f
-** float(316015) / float(256) =  
-** 10011010010 0110 1111
-** what is roundf?
-** roundf is a function that rounds a floating point number to the nearest integer
-** float (316015) = 316015.000000
-** float (256) = 256.000000
-** 316015.000000 / 256.000000 = 1234.429688 = 1234.43
+** fixedPointNumber / 2^8 = 316015 / 256 = 1234.4296875 = 1234.43 <- this is the floating point number
 
-2^-2 + 2^-3 + 2^-5 + 2^-6 + 2^-7 + 2^-8 
+** here ano
 */
 
 Fixed::Fixed() : _fixedPointValue(0) {
@@ -65,10 +58,6 @@ Fixed::Fixed(const int value) {
 Fixed::Fixed(const float value) {
 	std::cout << "Float constructor called" << std::endl;
 	this->_fixedPointValue = roundf(value * (1 << this->_fractionalBits));
-	// for example 1234.4321f
-	// 1 << 8 = 256
-	// 1234.4321f * 256 = 316.4321f
-	// roundf(316.4321f) = 316
 }
 
 Fixed& Fixed::operator=(const Fixed &rhs) {
