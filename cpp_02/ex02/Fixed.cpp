@@ -6,7 +6,7 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 12:30:17 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/03 12:38:09 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/09 09:25:06 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,7 @@ Fixed& Fixed::operator--() {
 
 Fixed Fixed::operator--(int) {
 	Fixed tmp(*this);
-	operator--();
+	operator--(); // or --(*this); thats the same and means that we call the prefix operator --
 	return tmp;
 }
 

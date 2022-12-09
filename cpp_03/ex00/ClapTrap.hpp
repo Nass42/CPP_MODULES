@@ -6,7 +6,7 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 14:59:47 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/01 21:44:50 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/09 10:44:30 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <iostream>
 
 class ClapTrap {
-	protected:
+	private:
 		std::string _name;
 		int         _hitPoints;
 		int         _energyPoints;

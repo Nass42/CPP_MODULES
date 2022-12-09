@@ -6,7 +6,7 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 14:25:40 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/04 14:27:52 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/09 10:59:09 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,9 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name) {
 	std::cout << "FragTrap Name Constructor Called" << std::endl;
 }
 
-FragTrap::FragTrap(FragTrap const & src) : ClapTrap(src) {
+FragTrap::FragTrap(FragTrap const & rhs) : ClapTrap(rhs) {
 	std::cout << "FragTrap Copy Constructor Called" << std::endl;
+	*this = rhs;
 }
 
 FragTrap::~FragTrap(void) {
@@ -30,10 +31,12 @@ FragTrap::~FragTrap(void) {
 
 FragTrap & FragTrap::operator=(FragTrap const & rhs) {
 	std::cout << "FragTrap Assignation Operator Called" << std::endl;
-	this->_name = rhs._name;
-	this->_hitPoints = rhs._hitPoints;
-	this->_energyPoints = rhs._energyPoints;
-	this->_attackDamage = rhs._attackDamage;
+	if (this != &rhs) {
+		this->_name = rhs._name;
+		this->_hitPoints = rhs._hitPoints;
+		this->_energyPoints = rhs._energyPoints;
+		this->_attackDamage = rhs._attackDamage;
+	}
 	return *this;
 }
 

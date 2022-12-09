@@ -6,7 +6,7 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 18:19:34 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/05 22:27:16 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/09 14:29:36 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ Dog::Dog(): Animal() {
 	this->_type = "Dog";
 }
 
-Dog::Dog( Dog const& src ) {
+Dog::Dog( Dog const& rhs ) {
 	std::cout << "Dog Copy Constructor Called" << std::endl;
-	*this = src;
+	*this = rhs;
 }
 
 Dog::~Dog() {
