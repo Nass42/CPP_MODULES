@@ -6,23 +6,18 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 16:09:48 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/07 14:49:22 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/09 11:17:21 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
-
-// set a random idea for each index of the array
-std::string RandomIdea() {
-	std::string idea[5] = {"Play ", "Eat", "Jump", "Sleep", "Think"};
-	// return idea[rand() % 5];
-	return "hooray";
-}
+#include <cstdlib>
 
 Brain::Brain() {
 	std::cout << "Brain Default Constructor Called" << std::endl;
+	std::string idea[5] = {"Play ", "Eat", "Jump", "Sleep", "Think"};
 	for (int i = 0; i < 100; i++)
-		this->_ideas[i] = RandomIdea();
+		this->_ideas[i] = idea[i % 5];
 }
 
 Brain::Brain( Brain const& src ) {

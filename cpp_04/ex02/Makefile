@@ -6,17 +6,17 @@
 #    By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/04 17:45:18 by namohamm          #+#    #+#              #
-#    Updated: 2022/12/07 15:10:12 by namohamm         ###   ########.fr        #
+#    Updated: 2022/12/09 11:31:41 by namohamm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-Name = abstract
+Name = pure
 
 SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-CXX = clang++
+CXX = c++
 
 CPPFLAGS = -g3 -std=c++98 -Wall -Wextra -Werror
 

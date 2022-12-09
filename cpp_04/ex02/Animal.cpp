@@ -6,7 +6,7 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 18:11:53 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/07 15:15:06 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/05 22:29:53 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ Animal& Animal::operator=(Animal const& rhs) {
 	return *this;
 }
 
-// std::string Animal::getType() const {
-// 	return this->_type;
-// }
+std::string Animal::getType() const {
+	return this->_type;
+}
 
 void Animal::makeSound() const {
 	std::cout << "Animal Sound!" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 18:21:08 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/07 14:54:41 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/09 11:20:26 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ Cat::Cat( Cat const& src ) {
 }
 
 Cat::~Cat() {
-	std::cout << "Cat Destructor Called" << std::endl;
 	delete this->_brain;
+	std::cout << "Cat Destructor Called" << std::endl;
 }
 
 Cat& Cat::operator=(Cat const& rhs) {

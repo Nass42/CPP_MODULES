@@ -6,65 +6,51 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 18:29:16 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/07 15:25:01 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/09 18:18:01 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-#include "Brain.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
-void mandatory_test()
-{
-	Animal* animals[4];
-	// Animal lol;
-	for (int i = 0; i < 4; i++)
-	{
-		if (i % 2 == 0)
-			animals[i] = new Dog();
-		else
-			animals[i] = new Cat();
-	}
-	std::cout << "----------------------------------------" << std::endl;
-	for (int i = 0; i < 4; i++)
-		animals[i]->makeSound();
-	std::cout << "----------------------------------------" << std::endl;
-	std::cout << "----------------------------------------" << std::endl;
-	//Call the makeSound function on each of the Animal objects in the array
-	for (int i = 0; i < 4; i++)
-		delete animals[i];
-	std::cout << "----------------------------------------" << std::endl;
+void mandatory_test() {
+	// const Animal* meta = new Animal();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	std::cout << "-----------------------" << std::endl;
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
+	std::cout << "-----------------------" << std::endl;
+	i->makeSound(); //will output the cat sound!
+	j->makeSound();
+	// meta->makeSound();
+	std::cout << "-----------------------" << std::endl;
+	delete j;
+	delete i;
+	// delete meta;
 }
 
-void additional_test() {
-
-	Cat cat_one;
-	Cat cat_two;
-
-	std::cout << "cat_one Ideas-------------------" << std::endl;
-	cat_one.getbrain()->getIdeas();
-	std::cout << "--------------------------------" << std::endl;
-	std::cout << "Copy cat_one to cat_two---------" << std::endl;
-	cat_two = cat_one;
-	std::cout << "--------------------------------" << std::endl;
-	std::cout << "cat_two Ideas-------------------" << std::endl;
-	cat_two.getbrain()->getIdeas();
-	std::cout << "--------------------------------" << std::endl;
-	std::cout << "cat_one Change his mind---------" << std::endl;
-	cat_one.getbrain()->changeIdeas();
-	std::cout << "cat_one New Ideas---------------" << std::endl;
-	cat_one.getbrain()->getIdeas();
-	std::cout << "--------------------------------" << std::endl;
-	std::cout << "cat_two Ideas-------------------" << std::endl;
-	cat_two.getbrain()->getIdeas();
-	std::cout << "--------------------------------" << std::endl;
+void optional_test() {
+	std::cout << "-----------------------" << std::endl;
+	const WrongAnimal* wrongAnimal = new WrongAnimal();
+	const WrongAnimal* wrongCat = new WrongCat();
+	std::cout << "-----------------------" << std::endl;
+	std::cout << wrongAnimal->getType() << " " << std::endl;
+	std::cout << wrongCat->getType() << " " << std::endl;
+	std::cout << "-----------------------" << std::endl;
+	wrongAnimal->makeSound();
+	wrongCat->makeSound();
+	std::cout << "-----------------------" << std::endl;
+	delete wrongCat;
+	delete wrongAnimal;
 }
 
 int main( void )
 {
 	mandatory_test();
-	// additional_test();
-	
+	// optional_test();
 	return 0;
 }
