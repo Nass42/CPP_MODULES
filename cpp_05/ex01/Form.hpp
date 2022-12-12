@@ -6,7 +6,7 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 14:11:57 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/12 16:21:53 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/12 22:14:25 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include "Bureaucrat.hpp"
+class Bureaucrat;
 
 class Form
 {

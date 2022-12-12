@@ -6,13 +6,13 @@
 #    By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/07 15:49:09 by namohamm          #+#    #+#              #
-#    Updated: 2022/12/12 14:10:55 by namohamm         ###   ########.fr        #
+#    Updated: 2022/12/12 22:16:08 by namohamm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 Name = form
 
-SRCS = main.cpp Bureaucrat.cpp
+SRCS = main.cpp Bureaucrat.cpp Form.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

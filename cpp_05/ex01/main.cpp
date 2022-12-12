@@ -6,33 +6,35 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 15:57:50 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/12 13:28:42 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/12 23:15:12 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-int main()
-{
-	/*-------------------------*/
-	Bureaucrat b("Bob", 5);
-	std::cout << b << std::endl;
-	b.incrementGrade();
-	std::cout << b << std::endl;
-	b.decrementGrade();
-	std::cout << b << std::endl;
-	/*-------------------------*/
-	// try and catch
-	try
-	{
-		Bureaucrat b("Nass", -8);
-		std::cout << b << std::endl;
-	}
-	catch (std::exception &e)
-	{
+int main() {
+	std::cout << "--------------------" << std::endl;
+	try {
+		Bureaucrat b("Nass", 3);
+	} catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
-		return 1;
 	}
-	/*-------------------------*/
+	std::cout << "--------------------" << std::endl;
+	try {
+		b.incrementGrade();
+	} catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
+	std::cout << "--------------------" << std::endl;
+	std::cout << b.getGrade() << std::endl;
+	std::cout << "--------------------" << std::endl;
+	try {
+		b.decrementGrade();
+	} catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
+	std::cout << "--------------------" << std::endl;
+	std::cout << b.getGrade() << std::endl;
+	std::cout << "--------------------" << std::endl;
 	return 0;
 }
