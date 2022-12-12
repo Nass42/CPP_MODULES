@@ -6,11 +6,11 @@
 #    By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/04 17:45:18 by namohamm          #+#    #+#              #
-#    Updated: 2022/12/09 11:31:41 by namohamm         ###   ########.fr        #
+#    Updated: 2022/12/11 16:14:15 by namohamm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-Name = pure
+Name = abstract
 
 SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
 

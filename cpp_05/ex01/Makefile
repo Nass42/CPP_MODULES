@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/12/04 17:45:18 by namohamm          #+#    #+#              #
-#    Updated: 2022/12/11 10:36:59 by namohamm         ###   ########.fr        #
+#    Created: 2022/12/07 15:49:09 by namohamm          #+#    #+#              #
+#    Updated: 2022/12/12 14:10:55 by namohamm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-Name = animal
+Name = form
 
-SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
+SRCS = main.cpp Bureaucrat.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -36,6 +36,5 @@ fclean: clean
 	rm -f $(Name)
 
 re: fclean all
-
 
 .PHONY: all clean fclean re

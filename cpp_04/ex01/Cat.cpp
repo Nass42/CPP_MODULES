@@ -6,7 +6,7 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 18:21:08 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/07 14:54:41 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/11 15:55:57 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,26 @@ Cat::Cat(): Animal() {
 	this->_brain = new Brain();
 }
 
-Cat::Cat( Cat const& src ) {
+Cat::Cat( Cat const& rhs ): Animal(rhs) {
 	std::cout << "Cat Copy Constructor Called" << std::endl;
-	*this = src;
-	this->_brain = new Brain();
+	*this = rhs;
 }
 
 Cat::~Cat() {
-	std::cout << "Cat Destructor Called" << std::endl;
 	delete this->_brain;
+	std::cout << "Cat Destructor Called" << std::endl;
 }
 
 Cat& Cat::operator=(Cat const& rhs) {
 	std::cout << "Cat Assignation Operator Called" << std::endl;
-	if (this != &rhs)
+	if (this != &rhs) {
 		this->_type = rhs._type;
+		if (this->_brain)
+			delete this->_brain;
+		this->_brain = new Brain();
+		this->_brain->setIdeas(rhs._brain->getIdeaas());
+
+	}
 	return *this;
 }
 

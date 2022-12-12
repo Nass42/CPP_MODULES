@@ -6,7 +6,7 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 18:21:08 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/05 22:34:37 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/09 18:07:52 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ Cat::Cat(): Animal() {
 	this->_type = "Cat";
 }
 
-Cat::Cat( Cat const& src ) {
+Cat::Cat( Cat const& rhs ) {
 	std::cout << "Cat Copy Constructor Called" << std::endl;
-	*this = src;
+	*this = rhs;
 }
 
 Cat::~Cat() {

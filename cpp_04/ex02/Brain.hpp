@@ -6,7 +6,7 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 23:36:01 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/07 13:14:22 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/11 14:54:44 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,13 @@ class Brain
 		std::string	_ideas[100];
 	public:
 		Brain();
-		Brain(Brain const &src);
+		Brain(Brain const &rhs);
 		~Brain();
 		Brain& operator=(Brain const &rhs);
 		std::string	identify() const;
 		void getIdeas() const;
-		void setIdeas(std::string &idea, int index);
+		void setIdeas(std::string *ideas);
+		std::string *getIdeaas();
 		void changeIdeas();
 };
 

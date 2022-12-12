@@ -6,7 +6,7 @@
 #    By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/01 14:40:52 by namohamm          #+#    #+#              #
-#    Updated: 2022/12/04 14:21:01 by namohamm         ###   ########.fr        #
+#    Updated: 2022/12/09 10:52:50 by namohamm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-CXX = clang++
+CXX = c++
 
 CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 

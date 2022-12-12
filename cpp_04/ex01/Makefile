@@ -6,7 +6,7 @@
 #    By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/04 17:45:18 by namohamm          #+#    #+#              #
-#    Updated: 2022/12/06 18:23:20 by namohamm         ###   ########.fr        #
+#    Updated: 2022/12/11 13:19:09 by namohamm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-CXX = clang++
+CXX = c++
 
 CPPFLAGS = -g3 -std=c++98 -Wall -Wextra -Werror
 

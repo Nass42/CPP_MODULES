@@ -1,12 +1,12 @@
 /* ************************************************************************** */
-/*                                                                            */
+/*						                                                          */
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 15:51:55 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/12 12:10:09 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/12 14:33:42 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define BUREAUCRAT_HPP
 
 # include <iostream>
+# include "Form.hpp"
 
 class Bureaucrat
 {
@@ -37,9 +38,10 @@ class Bureaucrat
 		~Bureaucrat();
 		Bureaucrat &operator=(Bureaucrat const &rhs);
 		std::string getName() const;
-		int         getGrade() const;
-		void        incrementGrade();
-		void        decrementGrade();
+		int			getGrade() const;
+		void		incrementGrade();
+		void		decrementGrade();
+		void		signForm(Form &form);
 };
 
 std::ostream &operator<<(std::ostream &out, Bureaucrat const &rhs);

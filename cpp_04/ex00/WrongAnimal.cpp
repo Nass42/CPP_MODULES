@@ -6,7 +6,7 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 22:43:52 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/05 22:45:12 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/11 12:03:05 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ WrongAnimal::WrongAnimal() {
 	this->_type = "WrongAnimal";
 }
 
-WrongAnimal::WrongAnimal( WrongAnimal const& src ) {
+WrongAnimal::WrongAnimal( WrongAnimal const& rhs ) {
 	std::cout << "WrongAnimal copy constructor called" << std::endl;
-	*this = src;
+	*this = rhs;
 }
 
 WrongAnimal::~WrongAnimal() {

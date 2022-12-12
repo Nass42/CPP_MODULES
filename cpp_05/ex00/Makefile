@@ -6,7 +6,7 @@
 #    By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/07 15:49:09 by namohamm          #+#    #+#              #
-#    Updated: 2022/12/07 15:50:43 by namohamm         ###   ########.fr        #
+#    Updated: 2022/12/10 15:42:13 by namohamm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,9 @@ SRCS = main.cpp Bureaucrat.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-CXX = clang++
+CXX = c++
 
-CPPFLAGS = -g3 -std=c++98 -Wall -Wextra -Werror
+CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 
 all: $(Name)
 
@@ -36,6 +36,5 @@ fclean: clean
 	rm -f $(Name)
 
 re: fclean all
-
 
 .PHONY: all clean fclean re

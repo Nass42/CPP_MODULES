@@ -6,7 +6,7 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 18:11:53 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/05 22:29:53 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/11 10:45:59 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,9 @@ Animal::Animal(): _type() {
 	this->_type = "Animal";
 }
 
-// Animal::Animal( std::string type ): _type(type) {
-// 	std::cout << "Animal Parametric Constructor Called" << std::endl;
-// 	this->_type = type;
-// }
-
-Animal::Animal( Animal const& src ) {
+Animal::Animal( Animal const& rhs ) {
 	std::cout << "Animal Copy Constructor Called" << std::endl;
-	*this = src;
+	*this = rhs;
 }
 
 Animal::~Animal() {

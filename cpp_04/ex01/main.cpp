@@ -6,7 +6,7 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 18:29:16 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/07 15:06:31 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/11 16:13:01 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@
 
 void mandatory_test()
 {
-	Animal* animals[4];
-	for (int i = 0; i < 4; i++)
+	int size = 10;
+	Animal* animals[size];
+	Animal bla;
+	for (int i = 0; i < size + 1; i++)
 	{
 		if (i % 2 == 0)
 			animals[i] = new Dog();
@@ -26,21 +28,7 @@ void mandatory_test()
 			animals[i] = new Cat();
 	}
 	std::cout << "---------------------" << std::endl;
-	for (int i = 0; i < 4; i++)
-		animals[i]->makeSound();
-	std::cout << "---------------------" << std::endl;
-	// print ideas of each animal
-	for (int i = 0; i < 3; i++)
-	{
-		if (i % 2 == 0)
-			((Dog*)animals[i])->getbrain().getIdeas();
-		else
-			((Cat*)animals[i])->getbrain()->getIdeas();
-	std::cout << "----------" << std::endl;
-	}
-	std::cout << "---------------------" << std::endl;
-	//Call the makeSound function on each of the Animal objects in the array
-	for (int i = 0; i < 4; i++)
+	for (int i = size; i > -1; i--)
 		delete animals[i];
 	std::cout << "---------------------" << std::endl;
 }
@@ -69,8 +57,7 @@ void additional_test() {
 	std::cout << "--------------------------------" << std::endl;
 }
 
-int main( void )
-{
+int main( void ) {
 	mandatory_test();
 	// additional_test();
 	
