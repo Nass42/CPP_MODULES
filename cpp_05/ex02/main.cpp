@@ -6,13 +6,14 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 15:57:50 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/13 10:02:18 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/13 12:47:19 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
 int main() {
+	
 	
 	return 0;
 }

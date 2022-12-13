@@ -6,7 +6,7 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 15:54:39 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/13 09:22:45 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/13 12:44:48 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ const char* Bureaucrat::GradeTooLowException::what() const throw() {
 }
 
 /*------------------------------------*/
-void Bureaucrat::signForm(Form &form) {
+void Bureaucrat::signAForm(AForm &form) {
 	try {
 		form.beSigned(*this);
 		std::cout << _name << " signed " << form.getName() << std::endl;

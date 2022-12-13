@@ -14,8 +14,8 @@
 # define BUREAUCRAT_HPP
 
 # include <iostream>
-# include "Form.hpp"
-class Form;
+# include "AForm.hpp"
+class AForm;
 
 class Bureaucrat
 {
@@ -42,7 +42,7 @@ class Bureaucrat
 		int			getGrade() const;
 		void		incrementGrade();
 		void		decrementGrade();
-		void		signForm(Form &form);
+		void		signAForm(AForm &form);
 };
 
 std::ostream &operator<<(std::ostream &out, Bureaucrat const &rhs);
