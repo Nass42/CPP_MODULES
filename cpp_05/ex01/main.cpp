@@ -6,35 +6,44 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 15:57:50 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/12 23:15:12 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/13 09:35:13 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
 int main() {
-	std::cout << "--------------------" << std::endl;
+	Bureaucrat bureaucrat_1("Nass", 3);
+	Bureaucrat bureaucrat_2("Ssan", 75);
+	std::cout << bureaucrat_1 << std::endl;
+	std::cout << bureaucrat_2 << std::endl;
+	/*-----------------------------------*/
+	Form form_1("Form_1", 5, 10);
+	std::cout << form_1 << std::endl;
+	/*-----------------------------------*/
 	try {
-		Bureaucrat b("Nass", 3);
-	} catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
+		Form form_2("Form_1", 8996, 10);
 	}
-	std::cout << "--------------------" << std::endl;
+	catch (std::exception &e) {
+		std::cerr << e.what() << std::endl;
+	}
+	/*-----------------------------------*/
 	try {
-		b.incrementGrade();
-	} catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
+		bureaucrat_1.signForm(form_1);
 	}
-	std::cout << "--------------------" << std::endl;
-	std::cout << b.getGrade() << std::endl;
-	std::cout << "--------------------" << std::endl;
+	catch (std::exception &e) {
+		std::cerr << e.what() << std::endl;
+	}
+	/*-----------------------------------*/
+	std::cout << form_1 << std::endl;
+	/*-----------------------------------*/
 	try {
-		b.decrementGrade();
-	} catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
+		bureaucrat_2.signForm(form_1);
 	}
-	std::cout << "--------------------" << std::endl;
-	std::cout << b.getGrade() << std::endl;
-	std::cout << "--------------------" << std::endl;
+	catch (std::exception &e) {
+		std::cerr << e.what() << std::endl;
+	}
+	/*-----------------------------------*/
+	std::cout << form_1 << std::endl;
 	return 0;
 }

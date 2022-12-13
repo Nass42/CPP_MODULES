@@ -6,7 +6,7 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 15:54:39 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/13 09:43:04 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/13 09:22:45 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,11 @@ void Bureaucrat::decrementGrade() {
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw() {
-	return "Grade is too high";
+	return "* Grade is too high *";
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw() {
-	return "Grade is too low";
+	return "* Grade is too low *";
 }
 
 /*------------------------------------*/
