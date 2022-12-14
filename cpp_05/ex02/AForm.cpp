@@ -77,4 +77,3 @@ std::ostream &operator<<(std::ostream &out, AForm const &rhs) {
 	out << "Grade to execute: " << rhs.getGradeToExecute() << std::endl;
 	return out;
 }
-

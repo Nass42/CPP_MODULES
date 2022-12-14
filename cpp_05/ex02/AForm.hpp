@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AAForm.hpp                                          :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 14:11:57 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/13 10:06:43 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/14 12:25:15 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,12 @@ class AForm
 		AForm(AForm const &rhs);
 		virtual ~AForm();
 		AForm &operator=(AForm const &rhs);
-		virtual std::string getName() const = 0;
+		virtual std::string getName() const;
 		bool		getSigned() const;
 		int			getGradeToSign() const;
 		int			getGradeToExecute() const;
 		void		beSigned(Bureaucrat const &rhs);
+		virtual void		execute(Bureaucrat const &executor) const = 0;
 };
 
 std::ostream &operator<<(std::ostream &out, AForm const &rhs);
