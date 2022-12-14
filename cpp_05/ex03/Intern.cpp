@@ -6,7 +6,7 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 13:30:47 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/14 14:19:14 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/14 22:44:38 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,10 @@ Intern::~Intern() {}
 
 Intern &Intern::operator=(Intern const &rhs) {
 	if (this != &rhs) {
-		// do stuff
+		// nothing to do
 	}
 	return *this;
 }
-
 // AForm *Intern::makeForm(std::string const &name, std::string const &target) {
 // 	if (name == "Shrubbery Creation") {
 // 		return new ShrubberyCreationForm(target);
@@ -41,7 +40,6 @@ Intern &Intern::operator=(Intern const &rhs) {
 // 		throw std::out_of_range("Form not found");
 // 	}
 // }
-
 // another way to do makeForm without using if statements or switch statements
 AForm *Intern::makeForm(std::string const &name, std::string const &target) {
 	std::string formNames[3] = {"Shrubbery Creation", "Robotomy Request", "Presidential Pardon"};
