@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serialize.hpp                                      :+:      :+:    :+:   */
+/*   helper.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/15 01:21:27 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/15 22:13:05 by namohamm         ###   ########.fr       */
+/*   Created: 2022/12/15 22:45:27 by namohamm          #+#    #+#             */
+/*   Updated: 2022/12/15 22:50:06 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERIALIZE_HPP
-# define SERIALIZE_HPP
+#ifndef HELPER_HPP
+# define HELPER_HPP
 
 # include <iostream>
-# include <string>
-# include <sstream>
-# include <iomanip>
-# include <ctime>
 # include <cstdlib>
+# include <ctime>
 
-struct Data
-{
-	std::string s;
-	int			n;
-};
+# include "Base.hpp"
+# include "A.hpp"
+# include "B.hpp"
+# include "C.hpp"
 
-uintptr_t	serialize(Data *ptr);
-Data		*deserialize(uintptr_t raw);
+Base * generate(void);
+void identify(Base * p);
+void identify(Base & p);
 
 #endif

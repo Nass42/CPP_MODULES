@@ -6,23 +6,20 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 22:46:38 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/15 00:11:32 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/15 21:47:15 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Convert.hpp"
 
 Convert::Convert() : _str(""), _char(0), _int(0), _float(0), _double(0){
-	return ;
 }
 
 Convert::Convert(Convert const &rhs) {
 	*this = rhs;
-	return ;
 }
 
 Convert::~Convert() {
-	return ;
 }
 
 Convert &Convert::operator=(Convert const &rhs) {

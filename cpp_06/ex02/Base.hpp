@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serialize.hpp                                      :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/15 01:21:27 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/15 22:13:05 by namohamm         ###   ########.fr       */
+/*   Created: 2022/12/15 22:22:42 by namohamm          #+#    #+#             */
+/*   Updated: 2022/12/15 22:41:53 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERIALIZE_HPP
-# define SERIALIZE_HPP
+#ifndef BASE_HPP
+# define BASE_HPP
 
-# include <iostream>
-# include <string>
-# include <sstream>
-# include <iomanip>
-# include <ctime>
-# include <cstdlib>
-
-struct Data
+class Base
 {
-	std::string s;
-	int			n;
+	public:
+		virtual ~Base();
 };
 
-uintptr_t	serialize(Data *ptr);
-Data		*deserialize(uintptr_t raw);
+Base * generate(void);
 
 #endif

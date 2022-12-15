@@ -1,32 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serialize.hpp                                      :+:      :+:    :+:   */
+/*   Base.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/15 01:21:27 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/15 22:13:05 by namohamm         ###   ########.fr       */
+/*   Created: 2022/12/15 22:37:57 by namohamm          #+#    #+#             */
+/*   Updated: 2022/12/15 22:43:38 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERIALIZE_HPP
-# define SERIALIZE_HPP
+#include "Base.hpp"
 
-# include <iostream>
-# include <string>
-# include <sstream>
-# include <iomanip>
-# include <ctime>
-# include <cstdlib>
-
-struct Data
-{
-	std::string s;
-	int			n;
-};
-
-uintptr_t	serialize(Data *ptr);
-Data		*deserialize(uintptr_t raw);
-
-#endif
+Base::~Base() {}

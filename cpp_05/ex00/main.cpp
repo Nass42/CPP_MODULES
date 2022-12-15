@@ -6,7 +6,7 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 15:57:50 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/13 09:16:59 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/15 14:09:25 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,5 @@ int main()
 		std::cerr << e.what() << std::endl;
 	}
 	/*-------------------------*/
-	// more tests should be done
 	return 0;
 }
