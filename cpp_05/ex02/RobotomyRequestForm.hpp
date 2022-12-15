@@ -6,7 +6,7 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 23:54:08 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/14 00:11:32 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/15 17:18:49 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ROBOTOMYREQUESTFORM_HPP
 
 # include <iostream>
+# include <cstdlib>
 # include "AForm.hpp"
 
 class RobotomyRequestForm : public AForm

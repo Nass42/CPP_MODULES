@@ -6,7 +6,7 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 14:01:59 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/15 16:43:59 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/15 17:24:39 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ const char *ShrubberyCreationForm::FileNotOpenException::what() const throw() {
 void ShrubberyCreationForm::creationTarget() const{
 	std::ofstream file;
 	try {
-		file.open(this->_target + "_shrubbery");
+		file.open((this->_target + "_shrubbery").c_str());
 		if (file.fail())
 			throw ShrubberyCreationForm::FileNotOpenException();
 	}
