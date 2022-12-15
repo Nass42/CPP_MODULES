@@ -6,7 +6,7 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 23:56:28 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/14 12:16:55 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/15 17:25:48 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ RobotomyRequestForm::RobotomyRequestForm(std::string target)
 }
 
 RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &rhs)
-	: AForm(rhs), _target(rhs.getTarget()) {
+	: AForm("RobotomyRequestForm", 72, 45), _target(rhs.getTarget()) {
 	std::cout << "RobotomyRequestForm created" << std::endl;
 }
 
@@ -63,7 +63,7 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const {
 			std::cerr << e.what() << std::endl;
 		}
 	} else {
-		std::cout << "Form is not signed" << std::endl;
+		throw std::out_of_range("Form is not signed");
 	}
 }
 

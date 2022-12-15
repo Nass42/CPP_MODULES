@@ -6,7 +6,7 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 14:01:59 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/14 13:13:55 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/15 16:43:59 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,22 @@ std::string ShrubberyCreationForm::getTarget() const {
 	return this->_target;
 }
 
+/*------------------------------------------------------------*/
+const char *ShrubberyCreationForm::FileNotOpenException::what() const throw() {
+	return "File not open";
+}
+/*------------------------------------------------------------*/
+
 void ShrubberyCreationForm::creationTarget() const{
 	std::ofstream file;
-	file.open(this->_target + "_shrubbery");
+	try {
+		file.open(this->_target + "_shrubbery");
+		if (file.fail())
+			throw ShrubberyCreationForm::FileNotOpenException();
+	}
+	catch (std::exception &e) {
+		throw;
+	}
 	file << "                                   .         ;  " << std::endl;
 	file << "      .              .              ;%     ;;   " << std::endl;
 	file << "        ,           ,                :;%  %;   " << std::endl;
@@ -75,13 +88,13 @@ void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
 				this->creationTarget();
 				std::cout << "Form is executed" << std::endl;
 			} else {
-				throw std::out_of_range("Bueraucrat grade is too low to execute the form");
+				throw AForm::GradeTooLowException();
 			}
 		}
 		catch (std::exception &e) {
-			std::cout << e.what() << std::endl;
+			throw;
 		}
 	} else {
-		std::cout << "Form is not signed" << std::endl;
+		throw std::out_of_range("Form is not signed");
 	}
 }

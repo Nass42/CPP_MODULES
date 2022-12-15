@@ -6,7 +6,7 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 14:11:57 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/14 12:25:15 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/15 16:19:57 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class AForm
 		int const			_gradeToSign;
 		int const			_gradeToExecute;
 		AForm();
+	protected:
 		class GradeTooHighException : public std::exception
 		{
 			public:
