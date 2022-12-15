@@ -12,10 +12,10 @@
 
 #include "AForm.hpp"
 
-AForm::AForm() : _name("default"), _signed(false), _gradeToSign(1), _gradeToExecute(5) {
+AForm::AForm() : _name("default"), _signed(false), _gradeToSign(150), _gradeToExecute(150) {
 }
 
-AForm::AForm(std::string name, int gradeToSign, int gradeToExecute) :
+AForm::AForm(std::string name, int gradeToSign, int gradeToExecute):
 	_name(name), _signed(false), _gradeToSign(gradeToSign),
 	_gradeToExecute(gradeToExecute) {
 	if (gradeToSign < 1 || gradeToExecute < 1)
@@ -24,7 +24,7 @@ AForm::AForm(std::string name, int gradeToSign, int gradeToExecute) :
 		throw AForm::GradeTooLowException();
 }
 
-AForm::AForm(AForm const &rhs) :
+AForm::AForm(AForm const &rhs):
 	_name(rhs._name), _signed(rhs._signed),
 	_gradeToSign(rhs._gradeToSign), _gradeToExecute(rhs._gradeToExecute) {
 }
@@ -63,11 +63,11 @@ void AForm::beSigned(Bureaucrat const &rhs) {
 }
 
 const char* AForm::GradeTooHighException::what() const throw() {
-	return "+ Grade is too high +";
+	return "Grade is too high";
 }
 
 const char* AForm::GradeTooLowException::what() const throw() {
-	return "+ Grade is too low +";
+	return "Grade is too low";
 }
 
 std::ostream &operator<<(std::ostream &out, AForm const &rhs) {

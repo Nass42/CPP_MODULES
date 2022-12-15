@@ -6,7 +6,7 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 15:54:39 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/14 12:27:45 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/15 16:59:12 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,9 @@ Bureaucrat::~Bureaucrat() {
 }
 
 Bureaucrat &Bureaucrat::operator=(Bureaucrat const &rhs) {
-	if (this != &rhs)
+	if (this != &rhs) {
 		_grade = rhs._grade;
+	}
 	return *this;
 }
 
@@ -57,11 +58,11 @@ void Bureaucrat::decrementGrade() {
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw() {
-	return "* Grade is too high *";
+	return "Grade is too high";
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw() {
-	return "* Grade is too low *";
+	return "Grade is too low";
 }
 
 /*------------------------------------*/
