@@ -6,7 +6,7 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 15:57:50 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/15 16:24:44 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/15 18:12:56 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,41 +20,45 @@ void robotomyTests();
 void presidentialTests();
 void executeFormTests();
 
-int main()
-{
-	Bureaucrat b("Jill", 144);
+// int main()
+// {
+// 	Bureaucrat b("Jill", 144);
 
-	{
-		ShrubberyCreationForm s("outdoor");
-		b.signAForm(s);
-		b.executeForm(s);
-	}
+// 	{
+// 		ShrubberyCreationForm s("outdoor");
+// 		b.signAForm(s);
+// 		b.executeForm(s);
+// 	}
 
-	// {
-	// 	RobotomyRequestForm r("Robert");
-	// 	b.signAForm(r);
-	// 	b.executeForm(r);
-	// }
+// 	// {
+// 	// 	RobotomyRequestForm r("Robert");
+// 	// 	b.signAForm(r);
+// 	// 	b.executeForm(r);
+// 	// }
 
-	// {
-	// 	PresidentialPardonForm p("Albert");
-	// 	b.signAForm(p);
-	// 	b.executeForm(p);
-	// }
-}
-
-// int main() {
-// 	std::cout <<"Shrubbery Creation Form Tests"<< std::endl;
-// 	shrubberyTests();
-// 	std::cout <<"\nRobotomy Request Form Tests"<< std::endl;
-// 	robotomyTests();
-// 	std::cout <<"\nPresidential Pardon Form Tests"<< std::endl;
-// 	presidentialTests();
-// 	std::cout <<"\nBureaucrat::executeForm() Tests"<< std::endl;
-// 	executeFormTests();
-
-// 	return 0;
+// 	// {
+// 	// 	PresidentialPardonForm p("Albert");
+// 	// 	b.signAForm(p);
+// 	// 	b.executeForm(p);
+// 	// }
 // }
+
+int main() {
+	std::cout <<"Shrubbery Creation Form Tests"<< std::endl;
+	std::cout <<"---------------------------------"<< std::endl;
+	shrubberyTests();
+	std::cout <<"\nRobotomy Request Form Tests"<< std::endl;
+	std::cout <<"---------------------------------"<< std::endl;
+	robotomyTests();
+	std::cout <<"\nPresidential Pardon Form Tests"<< std::endl;
+	std::cout <<"---------------------------------"<< std::endl;
+	presidentialTests();
+	std::cout <<"\nBureaucrat::executeForm() Tests"<< std::endl;
+	std::cout <<"---------------------------------"<< std::endl;
+	executeFormTests();
+
+	return 0;
+}
 
 void tryCatch(std::string name, int grade, AForm &f) {
 	try {
