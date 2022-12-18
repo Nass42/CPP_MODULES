@@ -6,11 +6,76 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 22:46:38 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/15 21:47:15 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/18 17:54:41 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Convert.hpp"
+
+
+// implemetation of std::stoi, with std::atoi
+#include <cstdlib>
+#include <stdexcept>
+#include <string>
+
+int str_int(const std::string& str)
+{
+	std::size_t* idx = nullptr;
+	int base = 10;
+    char* endptr = nullptr;
+    const long long result = std::strtoll(str.c_str(), &endptr, base);
+    if (endptr == str.c_str()) {
+        throw std::invalid_argument("stoi: no conversion");
+    }
+    if (idx != nullptr) {
+        *idx = static_cast<std::size_t>(endptr - str.c_str());
+    }
+    if (result < std::numeric_limits<int>::min() || result > std::numeric_limits<int>::max()) {
+        throw std::out_of_range("stoi: out of range");
+    }
+    return static_cast<int>(result);
+}
+
+float str_float(const std::string& str)
+{
+	std::size_t* idx = nullptr;
+    char* endptr = nullptr;
+    const float result = std::atof(str.c_str());
+    if (result == 0 && str.c_str() == endptr) {
+        throw std::invalid_argument("stof: no conversion");
+    }
+    if (idx != nullptr) {
+        *idx = static_cast<std::size_t>(endptr - str.c_str());
+    }
+    return result;
+}
+
+double str_double(const std::string& str)
+{
+	char* endptr = nullptr;
+	const double result = std::atof(str.c_str());
+	if (result == 0 && str.c_str() == endptr) {
+		throw std::invalid_argument("stof: no conversion");
+	}
+	return result;
+}
+
+// int str_int(const std::string& str)
+// {
+// 	std::size_t* idx = nullptr;
+// 	int base = 10;
+//     char* endptr = nullptr;
+//     const int result = std::strtol(str.c_str(), &endptr, base);
+//     if (endptr == str.c_str()) {
+//         throw std::invalid_argument("stoi: no conversion");
+//     }
+//     if (idx != nullptr) {
+//         *idx = static_cast<std::size_t>(endptr - str.c_str());
+//     }
+//     return result;
+// }
+
+
 
 Convert::Convert() : _str(""), _char(0), _int(0), _float(0), _double(0){
 }
@@ -45,7 +110,8 @@ void	Convert::convertToChar() {
 	{
 		try
 		{
-			this->_char = static_cast<char>(std::stoi(this->_str));
+			this->_char = static_cast<char>(str_int(this->_str));
+			// this->_char = static_cast<char>(std::stoi(this->_str));
 		}
 		catch(const std::exception& e)
 		{
@@ -62,7 +128,8 @@ void	Convert::convertToChar() {
 void	Convert::convertToInt() {
 	try
 	{
-		this->_int = std::stoi(this->_str);
+		// this->_int = std::stoi(this->_str);
+		this->_int = str_int(this->_str);
 	}
 	catch(const std::exception& e)
 	{
@@ -75,7 +142,8 @@ void	Convert::convertToInt() {
 void	Convert::convertToFloat() {
 	try
 	{
-		this->_float = std::stof(this->_str);
+		this->_float = str_float(this->_str);
+		// this->_float = std::stof(this->_str)
 	}
 	catch(const std::exception& e)
 	{
@@ -91,7 +159,8 @@ void	Convert::convertToFloat() {
 void	Convert::convertToDouble() {
 	try
 	{
-		this->_double = std::stod(this->_str);
+		this->_double = str_double(this->_str);
+		// this->_double = std::stod(this->_str);
 	}
 	catch(const std::exception& e)
 	{
