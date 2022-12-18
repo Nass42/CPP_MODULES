@@ -6,18 +6,15 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 22:46:38 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/18 13:59:17 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/18 18:55:04 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Convert.hpp"
-
-
-// implemetation of std::stoi, with std::atoi
 #include <cstdlib>
 #include <stdexcept>
 #include <string>
 #include <limits>
+#include "Convert.hpp"
 
 int str_int(const std::string& str)
 {
@@ -61,23 +58,6 @@ double str_double(const std::string& str)
 	return result;
 }
 
-// int str_int(const std::string& str)
-// {
-// 	std::size_t* idx = NULL;
-// 	int base = 10;
-//     char* endptr = NULL;
-//     const int result = std::strtol(str.c_str(), &endptr, base);
-//     if (endptr == str.c_str()) {
-//         throw std::invalid_argument("stoi: no conversion");
-//     }
-//     if (idx != NULL) {
-//         *idx = static_cast<std::size_t>(endptr - str.c_str());
-//     }
-//     return result;
-// }
-
-
-
 Convert::Convert() : _str(""), _char(0), _int(0), _float(0), _double(0){
 }
 
@@ -112,7 +92,6 @@ void	Convert::convertToChar() {
 		try
 		{
 			this->_char = static_cast<char>(str_int(this->_str));
-			// this->_char = static_cast<char>(std::stoi(this->_str));
 		}
 		catch(const std::exception& e)
 		{
@@ -129,8 +108,10 @@ void	Convert::convertToChar() {
 void	Convert::convertToInt() {
 	try
 	{
-		// this->_int = std::stoi(this->_str);
-		this->_int = str_int(this->_str);
+		if (this->_str.length() == 1 && !isdigit(this->_str[0]))
+			this->_int = static_cast<int>(this->_str[0]);
+		else
+			this->_int = str_int(this->_str);
 	}
 	catch(const std::exception& e)
 	{
@@ -143,8 +124,10 @@ void	Convert::convertToInt() {
 void	Convert::convertToFloat() {
 	try
 	{
-		this->_float = str_float(this->_str);
-		// this->_float = std::stof(this->_str)
+		if (this->_str.length() == 1 && !isdigit(this->_str[0]))
+			this->_float = static_cast<float>(this->_str[0]);
+		else
+			this->_float = str_float(this->_str);
 	}
 	catch(const std::exception& e)
 	{
@@ -160,8 +143,10 @@ void	Convert::convertToFloat() {
 void	Convert::convertToDouble() {
 	try
 	{
-		this->_double = str_double(this->_str);
-		// this->_double = std::stod(this->_str);
+		if (this->_str.length() == 1 && !isdigit(this->_str[0]))
+			this->_double = static_cast<double>(this->_str[0]);
+		else
+			this->_double = str_double(this->_str);
 	}
 	catch(const std::exception& e)
 	{
