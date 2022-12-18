@@ -6,7 +6,7 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 22:46:38 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/18 17:54:41 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/18 13:59:17 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,18 @@
 #include <cstdlib>
 #include <stdexcept>
 #include <string>
+#include <limits>
 
 int str_int(const std::string& str)
 {
-	std::size_t* idx = nullptr;
+	std::size_t* idx = NULL;
 	int base = 10;
-    char* endptr = nullptr;
+    char* endptr = NULL;
     const long long result = std::strtoll(str.c_str(), &endptr, base);
     if (endptr == str.c_str()) {
         throw std::invalid_argument("stoi: no conversion");
     }
-    if (idx != nullptr) {
+    if (idx != NULL) {
         *idx = static_cast<std::size_t>(endptr - str.c_str());
     }
     if (result < std::numeric_limits<int>::min() || result > std::numeric_limits<int>::max()) {
@@ -38,13 +39,13 @@ int str_int(const std::string& str)
 
 float str_float(const std::string& str)
 {
-	std::size_t* idx = nullptr;
-    char* endptr = nullptr;
+	std::size_t* idx = NULL;
+    char* endptr = NULL;
     const float result = std::atof(str.c_str());
     if (result == 0 && str.c_str() == endptr) {
         throw std::invalid_argument("stof: no conversion");
     }
-    if (idx != nullptr) {
+    if (idx != NULL) {
         *idx = static_cast<std::size_t>(endptr - str.c_str());
     }
     return result;
@@ -52,7 +53,7 @@ float str_float(const std::string& str)
 
 double str_double(const std::string& str)
 {
-	char* endptr = nullptr;
+	char* endptr = NULL;
 	const double result = std::atof(str.c_str());
 	if (result == 0 && str.c_str() == endptr) {
 		throw std::invalid_argument("stof: no conversion");
@@ -62,14 +63,14 @@ double str_double(const std::string& str)
 
 // int str_int(const std::string& str)
 // {
-// 	std::size_t* idx = nullptr;
+// 	std::size_t* idx = NULL;
 // 	int base = 10;
-//     char* endptr = nullptr;
+//     char* endptr = NULL;
 //     const int result = std::strtol(str.c_str(), &endptr, base);
 //     if (endptr == str.c_str()) {
 //         throw std::invalid_argument("stoi: no conversion");
 //     }
-//     if (idx != nullptr) {
+//     if (idx != NULL) {
 //         *idx = static_cast<std::size_t>(endptr - str.c_str());
 //     }
 //     return result;
