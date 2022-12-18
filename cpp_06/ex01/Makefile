@@ -6,7 +6,7 @@
 #    By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/15 01:20:37 by namohamm          #+#    #+#              #
-#    Updated: 2022/12/15 01:21:11 by namohamm         ###   ########.fr        #
+#    Updated: 2022/12/18 15:12:29 by namohamm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ OBJS = $(SRCS:.cpp=.o)
 
 CXX = c++
 
-CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
+# CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
+CPPFLAGS = -std=c++11 -Wall -Wextra -Werror
 
 all: $(Name)
 
