@@ -1,22 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   MutantStack.tpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/15 22:55:06 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/18 22:40:42 by namohamm         ###   ########.fr       */
+/*   Created: 2022/12/20 00:20:59 by namohamm          #+#    #+#             */
+/*   Updated: 2022/12/20 00:39:43 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "helper.hpp"
 
-int main()
-{
-	srand(time(NULL));
-	Base *base = generate();
-	identify(base);
-	identify(*base);
-	return (0);
-}

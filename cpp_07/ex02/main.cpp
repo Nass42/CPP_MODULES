@@ -6,7 +6,7 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 11:37:09 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/16 11:41:03 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/19 20:37:13 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include "Array.hpp"
 #include "Array.tpp"
 #define MAX_VAL 750
+
 int main(int, char**)
 {
     Array<int> numbers(MAX_VAL);

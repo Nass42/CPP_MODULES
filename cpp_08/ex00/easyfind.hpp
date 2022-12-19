@@ -1,41 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Array.hpp                                          :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/16 11:20:27 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/19 21:08:12 by namohamm         ###   ########.fr       */
+/*   Created: 2022/12/19 22:16:57 by namohamm          #+#    #+#             */
+/*   Updated: 2022/12/19 22:28:49 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ARRAY_HPP
-# define ARRAY_HPP
+#ifndef EASYFIND_HPP
+# define EASYFIND_HPP
 
 # include <iostream>
-#include <climits>
-#include <cstdlib>
-#include <string>
-
-
-# include "Array.tpp"
+# include <algorithm>
+# include <vector>
 
 template <typename T>
-
-class Array
+int easyfind(T &container, int n)
 {
-	public:
-		Array();
-		Array(unsigned int n);
-		Array(Array const &src);
-		~Array();
-		Array &operator=(Array const &rhs);
-		T &operator[](unsigned int i);
-		unsigned int size() const;
-	private:
-		T *_array;
-		unsigned int _size;
-};
+	typename T::iterator it = std::find(container.begin(), container.end(), n);
+	if (it == container.end())
+		throw std::runtime_error("Element not found");
+	return *it;
+}
 
 #endif

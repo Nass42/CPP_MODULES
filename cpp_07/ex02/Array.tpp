@@ -6,7 +6,7 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 11:23:58 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/16 11:24:24 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/19 21:04:32 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,25 @@
 # define ARRAY_TPP
 
 template <typename T>
-Array<T>::Array() : _array(new T[0]), _size(0)
-{
+Array<T>::Array() : _array(new T[0]), _size(0) {
 }
 
 template <typename T>
-Array<T>::Array(unsigned int n) : _array(new T[n]), _size(n)
-{
+Array<T>::Array(unsigned int n) : _array(new T[n]), _size(n) {
 }
 
 template <typename T>
-Array<T>::Array(Array const &src)
-{
+Array<T>::Array(Array const &src) {
 	*this = src;
 }
 
 template <typename T>
-Array<T>::~Array()
-{
+Array<T>::~Array() {
 	delete [] _array;
 }
 
 template <typename T>
-Array<T> &Array<T>::operator=(Array const &rhs)
-{
+Array<T> &Array<T>::operator=(Array const &rhs) {
 	if (this != &rhs)
 	{
 		delete [] _array;
@@ -50,16 +45,14 @@ Array<T> &Array<T>::operator=(Array const &rhs)
 }
 
 template <typename T>
-T &Array<T>::operator[](unsigned int i)
-{
+T &Array<T>::operator[](unsigned int i) {
 	if (i >= _size)
 		throw std::exception();
 	return (_array[i]);
 }
 
 template <typename T>
-unsigned int Array<T>::size() const
-{
+unsigned int Array<T>::size() const {
 	return (_size);
 }
 

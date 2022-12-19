@@ -5,18 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/15 22:55:06 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/18 22:40:42 by namohamm         ###   ########.fr       */
+/*   Created: 2022/12/19 22:20:49 by namohamm          #+#    #+#             */
+/*   Updated: 2022/12/19 22:39:05 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "helper.hpp"
+#include "easyfind.hpp"
 
 int main()
 {
-	srand(time(NULL));
-	Base *base = generate();
-	identify(base);
-	identify(*base);
-	return (0);
+	std::vector<int> v;
+	v.push_back(1);
+	v.push_back(2);
+	v.push_back(3);
+	v.push_back(4);
+	v.push_back(5);
+	try
+	{
+		std::cout << easyfind(v, 5) << std::endl;
+		std::cout << easyfind(v, 11) << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	return 0;
 }
