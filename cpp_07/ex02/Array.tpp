@@ -5,13 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/16 11:23:58 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/19 21:04:32 by namohamm         ###   ########.fr       */
+/*   Created: 2022/12/20 15:29:41 by namohamm          #+#    #+#             */
+/*   Updated: 2022/12/20 16:48:04 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ARRAY_TPP
 # define ARRAY_TPP
+
+# include "Array.hpp"
 
 template <typename T>
 Array<T>::Array() : _array(new T[0]), _size(0) {
@@ -33,27 +35,27 @@ Array<T>::~Array() {
 
 template <typename T>
 Array<T> &Array<T>::operator=(Array const &rhs) {
-	if (this != &rhs)
-	{
-		delete [] _array;
+	if (this != &rhs) {
 		_size = rhs._size;
 		_array = new T[_size];
-		for (unsigned int i = 0; i < _size; i++)
+		for (unsigned int i = 0; i < _size; i++) {
 			_array[i] = rhs._array[i];
+		}
 	}
-	return (*this);
+	return *this;
 }
 
 template <typename T>
 T &Array<T>::operator[](unsigned int i) {
-	if (i >= _size)
-		throw std::exception();
-	return (_array[i]);
+	if (i >= _size) {
+		throw std::runtime_error("Index out of bounds");
+	}
+	return _array[i];
 }
 
 template <typename T>
 unsigned int Array<T>::size() const {
-	return (_size);
+	return _size;
 }
 
 #endif

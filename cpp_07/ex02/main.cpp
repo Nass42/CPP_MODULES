@@ -6,7 +6,7 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 11:37:09 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/19 20:37:13 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/20 16:50:19 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,15 @@ int main(int, char**)
         numbers[i] = value;
         mirror[i] = value;
     }
-    //SCOPE
+    // SCOPE
     {
         Array<int> tmp = numbers;
         Array<int> test(tmp);
+		// print tmp and test
+		// for (int i = 0; i < MAX_VAL; i++) {
+		// 	std::cout << tmp[i] << " | "<< test[i] <<  std::endl;
+		// }
     }
-
     for (int i = 0; i < MAX_VAL; i++)
     {
         if (mirror[i] != numbers[i])
