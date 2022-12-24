@@ -6,7 +6,7 @@
 /*   By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:48:44 by namohamm          #+#    #+#             */
-/*   Updated: 2022/12/24 14:16:32 by namohamm         ###   ########.fr       */
+/*   Updated: 2022/12/24 14:51:59 by namohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,22 @@ int main()
 	}
 	std::cout << "------------------" << std::endl;
 	std::stack<int> s(mstack);
+	MutantStack<int> t(mstack);
+	mstack.pop();
+	mstack.pop();
+	mstack.pop();
+	mstack.pop();
+	mstack.pop();
+	std::cout << mstack.size() << std::endl;
+	std::cout << t.size() << std::endl;
+	MutantStack<int>::iterator et = t.begin();
+	MutantStack<int>::iterator ete = t.end();
+	std::cout << "------------------" << std::endl;
+	while (et != ete)
+	{
+		std::cout << *et << std::endl;
+		et++;
+	}
+	std::cout << "------------------" << std::endl;
 	return 0;
 }
