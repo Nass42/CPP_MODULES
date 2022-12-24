@@ -6,13 +6,13 @@
 #    By: namohamm <namohamm@student.42.ae>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/20 00:16:44 by namohamm          #+#    #+#              #
-#    Updated: 2022/12/20 00:18:04 by namohamm         ###   ########.fr        #
+#    Updated: 2022/12/24 11:50:39 by namohamm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 Name = mutantstack
 
-SRCS = main.cpp MutantStack.cpp
+SRCS = main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
